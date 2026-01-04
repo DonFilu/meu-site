@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Ledijane Gonçalves</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Solicitar Agendamento</h1>
+        <p>Preencha os dados e clique em enviar para me chamar no WhatsApp.</p>
+
+        <div class="form-agendamento">
+            <div class="campo">
+                <label for="nome">Seu Nome:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="campo">
+                <label for="servico">Serviço Desejado:</label>
+                <select id="servico">
+                    <option value="Massagem Relaxante">Massagem Relaxante</option>
+                    <option value="Massagem Tântrica">Massagem Tântrica</option>
+                    <option value="Massagem Modeladora">Massagem Modeladora</option>
+                    <option value="Drenagem Linfática">Drenagem Linfática</option>
+                    <option value="Alinhamento de Chacras">Alinhamento de Chacras</option>
+                    <option value="Reiki">Reiki</option>
+                    <option value="Massagem Xamânica">Massagem Xamânica</option>
+                    <option value="Terapias Xamânicas">Terapias Xamânicas</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="data">Data Desejada:</label>
+                <input type="date" id="data">
+            </div>
+
+            <button type="button" class="botao" onclick="enviarParaWhatsApp()" style="background-color: #25d366; border: none; cursor: pointer;">
+                Enviar para o WhatsApp
+            </button>
+        </div>
+
+       <nav style="margin-top: 30px;">
+    <a href="index.html" class="botao">Voltar ao Início</a>
+</nav>
+    </main>
+
+    <script>
+        function enviarParaWhatsApp() {
+            // 1. Pegar os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const servico = document.getElementById('servico').value;
+            const data = document.getElementById('data').value;
+            const telefone = "5548933006518"; // Seu número configurado
+
+            // 2. Validar se o nome foi preenchido
+            if (nome === "") {
+                alert("Por favor, digite seu nome.");
+                return;
+            }
+
+            // 3. Criar a mensagem (formatada para URL)
+            const mensagem = `Olá Ledijane! Me chamo ${nome}. Gostaria de agendar um(a) *${servico}* para o dia ${data}. Você tem horário disponível?`;
+            
+            // 4. Montar o link
+            const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+            // 5. Abrir o WhatsApp
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
