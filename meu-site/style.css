@@ -1,0 +1,267 @@
+/* ==========================================================
+   CONFIGURAÇÕES GERAIS E CORES PREMIUM
+   ========================================================== */
+:root {
+    --verde-premium: #2d5a27;
+    --verde-claro: #4a8a42;
+    --dourado-suave: #c5a059;
+    --bege-fundo: #fdfaf5;
+    --branco-puro: #ffffff;
+    --texto: #333333;
+    --fonte-serif: "Georgia", "Times New Roman", serif;
+    --fonte-sans: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--fonte-sans);
+    background-color: var(--bege-fundo);
+    background-image: radial-gradient(circle at top right, #f4f7f6 0%, var(--bege-fundo) 100%);
+    color: var(--texto);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-serif);
+    color: var(--verde-premium);
+}
+
+/* ==========================================================
+   HEADER (LOGO E NOME)
+   ========================================================== */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-align: center;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    color: var(--dourado-suave);
+    font-weight: 500;
+}
+
+/* ==========================================================
+   CONTAINER PRINCIPAL
+   ========================================================== */
+.container {
+    text-align: center;
+    background: var(--branco-puro);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border-top: 5px solid var(--dourado-suave);
+    max-width: 450px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ==========================================================
+   BOTÕES PRINCIPAIS E MENU
+   ========================================================== */
+.menu-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+    width: 100%;
+    align-items: center;
+}
+
+.botao {
+    text-decoration: none;
+    background-color: var(--verde-premium);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(45, 90, 39, 0.2);
+    width: 85%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.botao:hover {
+    background-color: var(--verde-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 90, 39, 0.3);
+}
+
+/* ==========================================================
+   SERVIÇOS E VALORES (CORRIGIDO)
+   ========================================================== */
+.lista-servicos {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.servico-item {
+    border-bottom: 1px solid #eee;
+    padding: 5px 0;
+}
+
+.servico-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 0;
+}
+
+/* Botão Ver Valor Padronizado */
+.ver-valor {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--verde-premium);
+    text-transform: uppercase;
+    border: 1.5px solid var(--verde-premium);
+    padding: 6px 12px;
+    border-radius: 50px; /* Arredondado igual aos outros botões */
+    transition: all 0.3s ease;
+}
+
+/* Efeito quando o item está aberto */
+.servico-item[open] .ver-valor {
+    background-color: var(--dourado-suave);
+    border-color: var(--dourado-suave);
+    color: white;
+}
+
+.servico-detalhe {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    margin-top: 5px;
+    animation: fadeIn 0.3s ease;
+}
+
+.servico-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.preco {
+    color: var(--verde-premium);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.botao-agendar-pequeno {
+    text-decoration: none;
+    background-color: var(--verde-premium);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.botao-agendar-pequeno:hover {
+    background-color: var(--verde-claro);
+}
+
+/* ==========================================================
+   FAQ E FORMULÁRIO
+   ========================================================== */
+.faq-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.faq-item {
+    margin-bottom: 12px;
+}
+
+.botao-faq {
+    background-color: var(--branco-puro);
+    color: var(--verde-premium);
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    border: 1px solid rgba(45, 90, 39, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-item[open] .botao-faq {
+    background-color: var(--verde-premium);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.faq-resposta {
+    background-color: #fafafa;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    text-align: left;
+    line-height: 1.6;
+    animation: fadeIn 0.4s ease;
+}
+
+.form-agendamento {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.campo input, .campo select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   UTILITÁRIOS
+   ========================================================== */
+.navegacao-voltar {
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.botao-faq::after { content: "▾"; }
+.faq-item[open] .botao-faq::after { content: "▴"; }
